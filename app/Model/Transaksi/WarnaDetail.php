@@ -34,7 +34,7 @@ class WarnaDetail extends Model
     {
         return $this->belongsTo('App\Model\Referensi\BrandImage', 'image_id', '_id');
     }
-    
+
     public function setReorderAttribute($value)
     {
         $reorder =  WarnaDetail::orderBy('reorder', 'desc')->pluck('reorder')->first();

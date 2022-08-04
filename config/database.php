@@ -46,37 +46,57 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
             'prefix' => '',
             'prefix_indexes' => true,
-            'strict' => true,
+            'strict' => false,
             'engine' => null,
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
-        
+
         'mysql2' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL_SECOND'),
-            'host' => env('DB_HOST_SECOND', '127.0.0.1'),
+            'host' => env('DB_HOST_SECOND', 'localhost'),
             'port' => env('DB_PORT_SECOND', '3306'),
             'database' => env('DB_DATABASE_SECOND', 'forge'),
             'username' => env('DB_USERNAME_SECOND', 'forge'),
             'password' => env('DB_PASSWORD_SECOND', ''),
             'unix_socket' => env('DB_SOCKET_SECOND', ''),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
             'prefix' => '',
             'prefix_indexes' => true,
-            'strict' => true,
+            'strict' => false,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
+
+        'mysql3' => [
+            'driver' => 'mysql',
+            'url' => env('DATABASE_URL_THIRD'),
+            'host' => env('DB_HOST_THIRD', 'localhost'),
+            'port' => env('DB_PORT_THIRD', '3306'),
+            'database' => env('DB_DATABASE_THIRD', 'forge'),
+            'username' => env('DB_USERNAME_THIRD', 'forge'),
+            'password' => env('DB_PASSWORD_THIRD', ''),
+            'unix_socket' => env('DB_SOCKET_THIRD', ''),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => false,
             'engine' => null,
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
@@ -143,7 +163,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_'),
         ],
 
         'default' => [

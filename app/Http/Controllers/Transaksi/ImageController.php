@@ -167,6 +167,7 @@ class ImageController extends Controller
         $id = Image::where('id', $request->id)->pluck('image')->first();
         $data = Image::where('id', $request->id)->first();
         $arr = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
+        $path = null;
         try {
             if (!$data) {
                 $status = false;
@@ -191,7 +192,7 @@ class ImageController extends Controller
 
         return response()->json([
             'status' => $status,
-            'path1' => $path
+            'path1' => $path,
         ]);
     }
 

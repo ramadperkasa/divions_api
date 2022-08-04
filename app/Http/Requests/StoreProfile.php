@@ -56,18 +56,18 @@ class StoreProfile extends FormRequest
             }
         } else if ($this->page == 2) {
             return [
-                'identitas_provinsi_id' => 'required|exists:mysql2.ref_provinsi,id',
-                'identitas_kabupaten_id' => 'required|exists:mysql2.ref_kabupaten,id',
-                'identitas_kecamatan_id' => 'required|exists:mysql2.ref_kecamatan,id',
-                'identitas_kelurahan_id' => 'required|exists:mysql2.ref_kelurahan,id',
+                'identitas_provinsi_id' => 'required|exists:mysql3.ref_provinsi,id',
+                'identitas_kabupaten_id' => 'required|exists:mysql3.ref_kabupaten,id',
+                'identitas_kecamatan_id' => 'required|exists:mysql3.ref_kecamatan,id',
+                'identitas_kelurahan_id' => 'required|exists:mysql3.ref_kelurahan,id',
                 'identitas_alamat' => 'required',
             ];
         } else if ($this->page == 3) {
             return [
-                'provinsi_id' => 'required|exists:mysql2.ref_provinsi,id',
-                'kabupaten_id' => 'required|exists:mysql2.ref_kabupaten,id',
-                'kecamatan_id' => 'required|exists:mysql2.ref_kecamatan,id',
-                'kelurahan_id' => 'required|exists:mysql2.ref_kelurahan,id',
+                'provinsi_id' => 'required|exists:mysql3.ref_provinsi,id',
+                'kabupaten_id' => 'required|exists:mysql3.ref_kabupaten,id',
+                'kecamatan_id' => 'required|exists:mysql3.ref_kecamatan,id',
+                'kelurahan_id' => 'required|exists:mysql3.ref_kelurahan,id',
                 'alamat' => 'required',
             ];
         } else if ($this->page == 4) {

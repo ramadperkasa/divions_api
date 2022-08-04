@@ -13,7 +13,7 @@ class BrandProdukDetail extends Model
     public $incrementing = true;
     public $keyType = 'int';
     public $timestamps = false;
-    protected $fillable = ['id', '_id','brand_id', 'brand_product_id', 'title', 'content', 'ishide', 'reorder', 'updated_at', 'created_at', 'keterangan','brand_product_id_key'];
+    protected $fillable = ['id', '_id', 'brand_id', 'brand_product_id', 'title', 'content', 'ishide', 'reorder', 'updated_at', 'created_at', 'keterangan', 'brand_product_id_key'];
 
     public function brandProduk()
     {

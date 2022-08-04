@@ -17,7 +17,7 @@ class Warna extends Model
     public $timestamps = false;
 
     protected $fillable = ['id', 'nama', 'nama_singkat', 'code_hex', 'code_rgb', 'reorder', 'ishide'];
-    
+
     public function setReorderAttribute($value)
     {
         $reorder =  Warna::orderBy('reorder', 'desc')->pluck('reorder')->first();

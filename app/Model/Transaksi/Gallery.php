@@ -13,7 +13,7 @@ class Gallery extends Model
     public $keyType = 'int';
     public $timestamps = false;
     protected $fillable = ['id', 'id_kategori', 'image_id', 'tgl_publish', 'judul', 'judul_en', 'ishide', 'reorder'];
-    protected $appends = ['image', 'type_img', 'kategoriGallery'] ;
+    protected $appends = ['image', 'type_img', 'kategoriGallery'];
 
     public function kategori()
     {
@@ -37,7 +37,7 @@ class Gallery extends Model
     {
         return $this->images ? $this->images->image : '';
     }
-    
+
     public function getTypeImgAttribute()
     {
         return $this->images ? $this->images->type : '';

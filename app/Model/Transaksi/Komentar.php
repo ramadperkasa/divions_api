@@ -12,9 +12,10 @@ class Komentar extends Model
     public $incrementing = false;
     public $keyType = 'int';
     public $timestamps = false;
-    protected $fillable = ['id','berita_id','komentar_id','komentar_tgl','komentar_nama','komentar_email','komentar_konten','status_publish'];
+    protected $fillable = ['id', 'berita_id', 'komentar_id', 'komentar_tgl', 'komentar_nama', 'komentar_email', 'komentar_konten', 'status_publish'];
 
-    public function Komentar(){
-        return $this->belongsTo('App\Model\Transaksi\Berita','berita_id');
+    public function Komentar()
+    {
+        return $this->belongsTo('App\Model\Transaksi\Berita', 'berita_id');
     }
 }

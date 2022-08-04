@@ -73,28 +73,28 @@ class BlokTemplateController extends Controller
 
             $blokTemplate = BlokTemplate::updateOrCreate(['id' => $getId], $merge);
 
-            foreach ($request->header as $key => $value) {
-                if ($value['komponen'][0]['block_id']) {
-                    BlokTemplateDetail::insert(['block_template_id' => $getId, 'id' => $key + 1, 'posisi' =>  0, 'isContainer' => $value['isContainer'], 'reorder' => $value['reorder'], 'ishide' => $value['ishide'], 'col' => $value['col']]);
-                    foreach ($value['komponen'] as $index => $isi) {
-                        if ($isi['block_id']) {
-                            $komponen = array_merge($isi, ['block_template_id' => $getId, 'id' => $index + 1, 'block_template_detail_id' => $key + 1]);
-                            BlokTemplateDetailContent::insert($komponen);
-                        }
-                    }
-                }
-            }
-            foreach ($request->leftSidebar as $key => $value) {
-                if ($value['komponen'][0]['block_id']) {
-                    BlokTemplateDetail::insert(['block_template_id' => $getId, 'id' => $key + 1, 'posisi' =>  1, 'isContainer' => $value['isContainer'], 'reorder' => $value['reorder'], 'ishide' => $value['ishide'], 'col' => $value['col']]);
-                    foreach ($value['komponen'] as $index => $isi) {
-                        if ($isi['block_id']) {
-                            $komponen = array_merge($isi, ['block_template_id' => $getId, 'id' => $index + 1, 'block_template_detail_id' => $key + 1]);
-                            BlokTemplateDetailContent::insert($komponen);
-                        }
-                    }
-                }
-            }
+            // foreach ($request->header as $key => $value) {
+            //     if ($value['komponen'][0]['block_id']) {
+            //         BlokTemplateDetail::insert(['block_template_id' => $getId, 'id' => $key + 1, 'posisi' =>  0, 'isContainer' => $value['isContainer'], 'reorder' => $value['reorder'], 'ishide' => $value['ishide'], 'col' => $value['col']]);
+            //         foreach ($value['komponen'] as $index => $isi) {
+            //             if ($isi['block_id']) {
+            //                 $komponen = array_merge($isi, ['block_template_id' => $getId, 'id' => $index + 1, 'block_template_detail_id' => $key + 1]);
+            //                 BlokTemplateDetailContent::insert($komponen);
+            //             }
+            //         }
+            //     }
+            // }
+            // foreach ($request->leftSidebar as $key => $value) {
+            //     if ($value['komponen'][0]['block_id']) {
+            //         BlokTemplateDetail::insert(['block_template_id' => $getId, 'id' => $key + 1, 'posisi' =>  1, 'isContainer' => $value['isContainer'], 'reorder' => $value['reorder'], 'ishide' => $value['ishide'], 'col' => $value['col']]);
+            //         foreach ($value['komponen'] as $index => $isi) {
+            //             if ($isi['block_id']) {
+            //                 $komponen = array_merge($isi, ['block_template_id' => $getId, 'id' => $index + 1, 'block_template_detail_id' => $key + 1]);
+            //                 BlokTemplateDetailContent::insert($komponen);
+            //             }
+            //         }
+            //     }
+            // }
 
             foreach ($request->mainContent as $key => $value) {
                 if ($value['komponen'][0]['block_id']) {
@@ -108,28 +108,28 @@ class BlokTemplateController extends Controller
                 }
             }
 
-            foreach ($request->rightSidebar as $key => $value) {
-                if ($value['komponen'][0]['block_id']) {
-                    BlokTemplateDetail::insert(['block_template_id' => $getId, 'id' => $key + 1, 'posisi' =>  3, 'isContainer' => $value['isContainer'], 'reorder' => $value['reorder'], 'ishide' => $value['ishide'], 'col' => $value['col']]);
-                    foreach ($value['komponen'] as $index => $isi) {
-                        if ($isi['block_id']) {
-                            $komponen = array_merge($isi, ['block_template_id' => $getId, 'id' => $index + 1, 'block_template_detail_id' => $key + 1]);
-                            BlokTemplateDetailContent::insert($komponen);
-                        }
-                    }
-                }
-            }
-            foreach ($request->footer as $key => $value) {
-                if ($value['komponen'][0]['block_id']) {
-                    BlokTemplateDetail::insert(['block_template_id' => $getId, 'id' => $key + 1, 'posisi' =>  4, 'isContainer' => $value['isContainer'], 'reorder' => $value['reorder'], 'ishide' => $value['ishide'], 'col' => $value['col']]);
-                    foreach ($value['komponen'] as $index => $isi) {
-                        if ($isi['block_id']) {
-                            $komponen = array_merge($isi, ['block_template_id' => $getId, 'id' => $index + 1, 'block_template_detail_id' => $key + 1]);
-                            BlokTemplateDetailContent::insert($komponen);
-                        }
-                    }
-                }
-            }
+            // foreach ($request->rightSidebar as $key => $value) {
+            //     if ($value['komponen'][0]['block_id']) {
+            //         BlokTemplateDetail::insert(['block_template_id' => $getId, 'id' => $key + 1, 'posisi' =>  3, 'isContainer' => $value['isContainer'], 'reorder' => $value['reorder'], 'ishide' => $value['ishide'], 'col' => $value['col']]);
+            //         foreach ($value['komponen'] as $index => $isi) {
+            //             if ($isi['block_id']) {
+            //                 $komponen = array_merge($isi, ['block_template_id' => $getId, 'id' => $index + 1, 'block_template_detail_id' => $key + 1]);
+            //                 BlokTemplateDetailContent::insert($komponen);
+            //             }
+            //         }
+            //     }
+            // }
+            // foreach ($request->footer as $key => $value) {
+            //     if ($value['komponen'][0]['block_id']) {
+            //         BlokTemplateDetail::insert(['block_template_id' => $getId, 'id' => $key + 1, 'posisi' =>  4, 'isContainer' => $value['isContainer'], 'reorder' => $value['reorder'], 'ishide' => $value['ishide'], 'col' => $value['col']]);
+            //         foreach ($value['komponen'] as $index => $isi) {
+            //             if ($isi['block_id']) {
+            //                 $komponen = array_merge($isi, ['block_template_id' => $getId, 'id' => $index + 1, 'block_template_detail_id' => $key + 1]);
+            //                 BlokTemplateDetailContent::insert($komponen);
+            //             }
+            //         }
+            //     }
+            // }
         }
 
         if ($blokTemplate) {

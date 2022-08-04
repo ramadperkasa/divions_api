@@ -31,7 +31,7 @@ class BrandImage extends Model
     {
         return $this->belongsTo('App\Model\Referensi\BrandProduk', 'image_id', '_id');
     }
-	public function brandProdukKategori()
+    public function brandProdukKategori()
     {
         return $this->belongsTo('App\Model\Referensi\BrandKategoriProduk', 'image_id', '_id');
     }

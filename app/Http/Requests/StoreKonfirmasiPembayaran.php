@@ -26,8 +26,8 @@ class StoreKonfirmasiPembayaran extends FormRequest
         $jenis = $this->jenis;
 
         if ($jenis == 1) {
-            $jenis = 'exists:mysql2.trn_pendaftaran,id';
-            $kode_unik = 'required|exists:mysql2.trn_pendaftaran,kode_unik';
+            $jenis = 'exists:mysql3.trn_pendaftaran,id';
+            $kode_unik = 'required|exists:mysql3.trn_pendaftaran,kode_unik';
         } else {
             $jenis = 'status_anggota:jenis';
 
@@ -35,7 +35,7 @@ class StoreKonfirmasiPembayaran extends FormRequest
         }
 
         if ($jenis == 2) {
-            $pelatihan_id = 'required|exists.mysql2.trn_pelatihan,judul';
+            $pelatihan_id = 'required|exists.mysql3.trn_pelatihan,judul';
         } else {
             $pelatihan_id = 'nullable';
         }
@@ -46,10 +46,10 @@ class StoreKonfirmasiPembayaran extends FormRequest
             'kode_unik' => $kode_unik,
             'pendaftar_id' => 'required|' . $jenis,
             'pelatihan_id' => $pelatihan_id,
-            'sumber_bank_id' => 'required|exists:mysql2.ref_bank,id',
+            'sumber_bank_id' => 'required|exists:mysql3.ref_bank,id',
             'sumber_rekening_no' => 'required|numeric',
             'sumber_rekening_nama' => 'required',
-            'tujuan_rekening_id' => 'required|exists:mysql2.ref_rekening_bank,id',
+            'tujuan_rekening_id' => 'required|exists:mysql3.ref_rekening_bank,id',
             'tgl_pembayaran' => 'required|date',
             'jumlah' => 'required|numeric',
             'bukti_transfer' => 'required|mimes:png,jpg,jpeg'

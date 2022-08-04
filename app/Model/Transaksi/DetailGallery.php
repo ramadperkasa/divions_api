@@ -13,7 +13,7 @@ class DetailGallery extends Model
     public $keyType = 'int';
     public $timestamps = false;
     protected $fillable = ['id', 'type_img', 'gallery_id', 'image_id'];
-    protected $appends = ['image', 'type_img'] ;
+    protected $appends = ['image', 'type_img'];
 
     public function gallery()
     {
@@ -29,7 +29,7 @@ class DetailGallery extends Model
     {
         return $this->images ? $this->images->image : '';
     }
-    
+
     public function getTypeImgAttribute()
     {
         return $this->images ? $this->images->type : '';

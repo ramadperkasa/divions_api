@@ -16,7 +16,7 @@ class Brand extends Authenticatable
     protected $table = 'brand';
 
     protected $fillable = [
-        'id', 'nama', 'email', 'password', 'active', 'role_id','remember_token'
+        'id', 'nama', 'email', 'password', 'active', 'role_id', 'remember_token'
     ];
 
     protected $appends = ['all_permissions'];

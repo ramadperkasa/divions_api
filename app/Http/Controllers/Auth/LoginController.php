@@ -47,7 +47,7 @@ class LoginController extends Controller
 
     // public function handleProviderCallback($driver)
     // {
-        // $user = Socialite::driver('facebook')->stateless()->user();
+    // $user = Socialite::driver('facebook')->stateless()->user();
     //     $user = Socialite::driver('facebook')->scopes(['public_profile', 'email'])->asPopup()->redirect();
     //     return $user->token;
     // }
@@ -74,23 +74,18 @@ class LoginController extends Controller
     protected function loginOrCreateAccount($providerUser, $driver)
     {
 
-
-
-
         $checking = Admin::where('email', $providerUser->getEmail())->first();
 
-     
-            $request = request();
-            Auth::login($checking, true);
-            $user = $request->user();
-            $tokenResult = $user->createToken('Personal Access Token');
-            $token = $tokenResult->token;
-            $token->save();
+
+        $request = request();
+        Auth::login($checking, true);
+        $user = $request->user();
+        $tokenResult = $user->createToken('Personal Access Token');
+        $token = $tokenResult->token;
+        $token->save();
 
 
-            return $tokenResult;
-        
-      
+        return $tokenResult;
     }
 
     // private function isProviderAllowed($driver)

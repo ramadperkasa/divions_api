@@ -18,7 +18,7 @@ class BrandProduk extends Model
     protected $appends = ['cover_image', 'type_img', 'judul', 'subjudul'];
 
 
-   
+
     public function brandKategoriProduk()
     {
         return $this->belongsTo('App\Model\Referensi\BrandKategoriProduk', 'produk_kategori_id', '_id');
